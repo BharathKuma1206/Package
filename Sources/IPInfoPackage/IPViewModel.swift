@@ -17,7 +17,7 @@ public class IPViewModel: ObservableObject {
     @Published var error: Error?
     @Published var isLoading = false
 
-    private var cancellables: Set<AnyCancellable> = []
+    public var cancellables: Set<AnyCancellable> = []
 
     func fetchIP() {
         isLoading = true
