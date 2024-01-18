@@ -12,6 +12,8 @@ public struct IPContentView: View {
     
     public init() {}
     
+    @State private var showAlert = false
+        @State private var alertMessage = ""
     @ObservedObject private var viewModel = IPViewModel()
     @available(macOS 10.15.0, *)
     public var body: some View {
@@ -40,6 +42,17 @@ public struct IPContentView: View {
                    // Add more UI components for other information from the response
                } else if let error = viewModel.error {
                    Text("Error: \(error.localizedDescription)")
+                   Button("Show Alert") {
+                       showAlert = true
+                       alertMessage = "Error: \(error.localizedDescription)"
+                   }
+                   .alert(isPresented: $showAlert) {
+                       Alert(
+                        title: Text("Error"),
+                        message: Text(alertMessage),
+                        dismissButton: .default(Text("OK"))
+                       )
+                   }
                }
            }
            .onAppear {
