@@ -10,6 +10,7 @@
 import Foundation
 import Combine
 
+@available(iOS 13.0, *)
 @available(macOS 10.15, *)
 class IPViewModel: ObservableObject {
     @Published var ipInfo: IPInfo?
