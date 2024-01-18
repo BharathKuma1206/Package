@@ -9,9 +9,9 @@ import SwiftUI
 
 
 public struct ContentView: View {
-    public var data: String
+     var data: String
     
-    public init(data: String) {
+     init(data: String) {
         self.data = data
     }
     @ObservedObject private var viewModel = IPViewModel()
