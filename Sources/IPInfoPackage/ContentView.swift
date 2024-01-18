@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ContentView: View {
+public struct ContentView: View {
     
     @ObservedObject private var viewModel = IPViewModel()
     @available(macOS 10.15.0, *)
