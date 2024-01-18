@@ -20,7 +20,7 @@ class IPViewModel: ObservableObject {
 
     func fetchIP() {
         isLoading = true
-        APIManager.fetchIP()
+        FindMyIP.fetchIP()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 self.isLoading = false
