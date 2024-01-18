@@ -12,7 +12,7 @@ import Combine
 
 @available(iOS 13.0, *)
 @available(macOS 10.15, *)
-class IPViewModel: ObservableObject {
+public class IPViewModel: ObservableObject {
     @Published var ipInfo: IPInfo?
     @Published var error: Error?
     @Published var isLoading = false
