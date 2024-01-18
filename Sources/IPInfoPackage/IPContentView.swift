@@ -10,6 +10,8 @@ import SwiftUI
 
 public struct IPContentView: View {
     
+    public init() {}
+    
     @ObservedObject private var viewModel = IPViewModel()
     @available(macOS 10.15.0, *)
     public var body: some View {
