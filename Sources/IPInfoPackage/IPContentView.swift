@@ -43,9 +43,6 @@ public struct IPContentView: View {
             } else if let error = viewModel.error {
                 // Display an alert when an error occurs
                 Text("Error: \(error.localizedDescription)")
-                    .foregroundColor(.red) // Customize the text color
-                    .font(Font.custom("Arial", size: 16)) // Customize the font size
-                    .padding()
                     .onAppear {
                         // Show the alert when an error occurs
                         showAlert = true
