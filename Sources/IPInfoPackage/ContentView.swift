@@ -12,11 +12,19 @@ public struct ContentView: View {
     
     @ObservedObject private var viewModel = IPViewModel()
     @available(macOS 10.15.0, *)
-       var body: some View {
+    public var body: some View {
            VStack {
                if viewModel.isLoading {
-                   if #available(macOS 11.0, *) {
-                       ProgressView("Fetching IP...")
+                   if #available(iOS 14.0, *) {
+                       if #available(macOS 11.0, *) {
+                           if #available(iOS 14.0, *) {
+                               ProgressView("Fetching IP...")
+                           } else {
+                               // Fallback on earlier versions
+                           }
+                       } else {
+                           // Fallback on earlier versions
+                       }
                    } else {
                        // Fallback on earlier versions
                    }
