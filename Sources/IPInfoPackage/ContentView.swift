@@ -9,7 +9,11 @@ import SwiftUI
 
 
 public struct ContentView: View {
-    public init() {}
+    public var data: String
+    
+    public init(data: String) {
+        self.data = data
+    }
     @ObservedObject private var viewModel = IPViewModel()
     @available(macOS 10.15.0, *)
     public var body: some View {
@@ -18,7 +22,7 @@ public struct ContentView: View {
                    if #available(iOS 14.0, *) {
                        if #available(macOS 11.0, *) {
                            if #available(iOS 14.0, *) {
-                               ProgressView("Fetching IP...")
+                               ProgressView(data)
                            } else {
                                // Fallback on earlier versions
                            }
