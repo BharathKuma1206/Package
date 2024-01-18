@@ -33,6 +33,9 @@ public struct IPContentView: View {
                } else if let ipInfo = viewModel.ipInfo {
                    if let ip = ipInfo.ip {
                    Text(ip)
+                           .foregroundColor(.gray)
+                           .font(Font.custom("Arial", size: 20))
+                           .padding()
                    }
                    // Add more UI components for other information from the response
                } else if let error = viewModel.error {
